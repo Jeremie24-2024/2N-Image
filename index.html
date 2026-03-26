@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>2N IMAGE | Photographie professionnelle</title>
+    <!-- Google Fonts for elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="#accueil">2N<span> IMAGE</span></a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#accueil" class="nav-link">Accueil</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#about" class="nav-link">À propos</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#testimonials" class="nav-link">Témoignages</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- FULL SCREEN HERO SECTION -->
+    <section id="accueil" class="hero-fullscreen">
+        <div class="hero-split">
+            <div class="hero-left">
+                <img src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&fit=crop" alt="Photographie artistique">
+            </div>
+            <div class="hero-right">
+                <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&fit=crop" alt="Portrait professionnel">
+            </div>
+        </div>
+        
+        <div class="hero-center-form">
+            <div class="hero-brand">2N IMAGE</div>
+            <div class="hero-description">
+                Bienvenue chez 2N Image, où chaque instant devient une œuvre d'art.<br><br>
+                Nous capturons l'essence de vos moments les plus précieux à travers un regard artistique unique. Que ce soit pour célébrer un événement, immortaliser un mariage ou sublimer un portrait, notre mission est de transformer vos souvenirs en images intemporelles.<br><br>
+                Avec passion et créativité, 2N Image révèle la beauté de chaque détail, de chaque émotion, et de chaque instant.
+            </div>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="hero-btn">Découvrir le portfolio</a>
+                <a href="#contact" class="hero-btn hero-btn-outline">Réserver une séance</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio-fullwidth">
+        <div class="portfolio-title-wrapper">
+            <h2 class="portfolio-main-title">Portfolio</h2>
+        </div>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="about-left">
+            <div class="about-content-wrapper">
+                <h2 class="about-title">À propos de moi</h2>
+                <div class="about-text">
+                    Chez 2N Image, la photographie est bien plus qu'un métier : c'est une passion, une manière de raconter des histoires à travers l'image.
+                    <br><br>
+                    Spécialisé dans la photographie de personnes, de nature et d'animaux, notre objectif est de capturer l'authenticité et de transformer chaque cliché en véritable œuvre artistique.
+                    <br><br>
+                    Chaque séance est une expérience unique, où créativité, sens du détail et émotion se rencontrent pour donner naissance à des images qui vous ressemblent.
+                </div>
+                <div class="about-founder">— Nicolas Passy, fondateur de 2N IMAGE</div>
+            </div>
+        </div>
+        <div class="about-right">
+            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop" alt="Nicolas Passy - Photographe 2N IMAGE">
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section">
+        <div class="services-left">
+            <img id="servicesImage" src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop" alt="Service photographie">
+        </div>
+        <div class="services-right">
+            <div class="services-content-wrapper">
+                <h2 class="services-title">Services</h2>
+                <p class="services-intro">Nous proposons une large gamme de services adaptés à vos besoins :</p>
+                <ul class="services-list" id="servicesList">
+                    <li class="service-item active" data-service="evenements">Photographie d'événements : capturez les moments forts de vos cérémonies et célébrations.</li>
+                    <li class="service-item" data-service="mariages">Mariages (civil et traditionnel) : immortalisez le plus beau jour de votre vie avec élégance et émotion.</li>
+                    <li class="service-item" data-service="anniversaires">Anniversaires : gardez des souvenirs inoubliables de vos moments de joie.</li>
+                    <li class="service-item" data-service="portraits">Portraits personnalisés : mettez en valeur votre personnalité à travers des clichés uniques.</li>
+                    <li class="service-item" data-service="artistique">Photographie artistique : transformation de photos de personnes, de la nature et d'animaux en véritables œuvres d'art.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials-section">
+        <h2 class="testimonials-title">Témoignages</h2>
+        <div class="testimonial-container" id="testimonialContainer">
+            <div class="testimonial-card active">
+                <div class="testimonial-text">
+                    Une expérience incroyable ! Les photos sont tout simplement magnifiques. 2N Image a su capturer chaque émotion de notre mariage avec une grande sensibilité. Je recommande vivement !
+                </div>
+                <div class="testimonial-author">— Marie & Jean</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    Très professionnel et à l'écoute. Le résultat dépasse largement mes attentes. Les portraits sont artistiques et mettent vraiment en valeur la personnalité.
+                </div>
+                <div class="testimonial-author">— Aline M.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    J'ai fait appel à 2N Image pour mon anniversaire et je suis plus que satisfait. Les moments importants ont été capturés avec naturel et créativité. Un vrai talent !
+                </div>
+                <div class="testimonial-author">— Kevin N.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    Les photos de nature et d'animaux sont impressionnantes, on dirait de véritables œuvres d'art. On sent la passion derrière chaque image.
+                </div>
+                <div class="testimonial-author">— Sophie L.</div>
+            </div>
+        </div>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+    </section>
+
+    <!-- CONTACT SECTION WITH ANIMATION -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-split">
+                <div class="contact-image">
+                    <img src="https://images.pexels.com/photos/1022937/pexels-photo-1022937.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop" alt="Photographie professionnelle">
+                </div>
+                <div class="contact-form-wrapper" id="contactFormWrapper">
+                    <div class="contact-headline">
+                        <h2>Prêt à immortaliser vos moments ?</h2>
+                        <p>Contactez 2N Image dès aujourd'hui et transformons ensemble vos souvenirs en œuvres d'art inoubliables</p>
+                    </div>
+                    <div class="contact-form-inner">
+                        <form id="newContactForm">
+                            <div class="form-group-custom">
+                                <input type="text" id="newName" placeholder="Nom complet" required>
+                            </div>
+                            <div class="form-group-custom">
+                                <input type="email" id="newEmail" placeholder="Adresse email" required>
+                            </div>
+                            <div class="form-group-custom">
+                                <input type="tel" id="newPhone" placeholder="Téléphone">
+                            </div>
+                            <div class="form-group-custom">
+                                <textarea rows="4" id="newMessage" placeholder="Votre message..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Envoyer le message</button>
+                            <div id="newFormFeedback" class="form-message-custom"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <h2>2N IMAGE</h2>
+                <p>Photographie d'auteur<br>créativité & authenticité</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-line">
+                    <span>+241 074595519</span>
+                </div>
+                <div class="contact-line">
+                    <span>2n@gmail.com</span>
+                </div>
+                <div class="contact-line">
+                    <span>Franceville, Gabon</span>
+                </div>
+            </div>
+            <div class="footer-social">
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 2N IMAGE — Tous droits réservés.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Portfolio images
+    const portfolioItems = [
+        { url: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Mariage en forêt" },
+        { url: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Portrait urbain" },
+        { url: "https://images.pexels.com/photos/1022937/pexels-photo-1022937.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Douceur & lumière" },
+        { url: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Émotion en noir & blanc" },
+        { url: "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Séance couple" },
+        { url: "https://images.pexels.com/photos/1656686/pexels-photo-1656686.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Fashion editorial" }
+    ];
+
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    
+    function renderPortfolio() {
+        if (!portfolioGrid) return;
+        portfolioGrid.innerHTML = '';
+        portfolioItems.forEach(item => {
+            const portfolioItem = document.createElement('div');
+            portfolioItem.className = 'portfolio-item';
+            portfolioItem.innerHTML = `
+                <div class="portfolio-image-wrapper">
+                    <img src="${item.url}" alt="${item.title}" loading="lazy">
+                </div>
+                <div class="portfolio-caption">${item.title}</div>
+            `;
+            portfolioGrid.appendChild(portfolioItem);
+        });
+    }
+    
+    renderPortfolio();
+
+    // Services image mapping
+    const serviceImages = {
+        evenements: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop",
+        mariages: "https://images.pexels.com/photos/1022937/pexels-photo-1022937.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop",
+        anniversaires: "https://images.pexels.com/photos/1656686/pexels-photo-1656686.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop",
+        portraits: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop",
+        artistique: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+    };
+
+    const servicesImage = document.getElementById('servicesImage');
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    serviceItems.forEach(item => {
+        item.addEventListener('click', function() {
+            serviceItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            const serviceType = this.getAttribute('data-service');
+            if (servicesImage && serviceImages[serviceType]) {
+                servicesImage.style.opacity = '0';
+                setTimeout(() => {
+                    servicesImage.src = serviceImages[serviceType];
+                    servicesImage.style.opacity = '1';
+                }, 200);
+            }
+        });
+    });
+
+    // Testimonials carousel
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.getElementById('testimonialDots');
+    let currentIndex = 0;
+    let intervalId;
+
+    testimonials.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToTestimonial(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function goToTestimonial(index) {
+        testimonials[currentIndex].classList.remove('active');
+        dots[currentIndex].classList.remove('active');
+        currentIndex = index;
+        testimonials[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+    }
+
+    function nextTestimonial() {
+        let nextIndex = (currentIndex + 1) % testimonials.length;
+        goToTestimonial(nextIndex);
+    }
+
+    function startCarousel() {
+        if (intervalId) clearInterval(intervalId);
+        intervalId = setInterval(nextTestimonial, 5000);
+    }
+
+    startCarousel();
+
+    const testimonialsSection = document.querySelector('.testimonials-section');
+    testimonialsSection.addEventListener('mouseenter', () => {
+        if (intervalId) clearInterval(intervalId);
+    });
+    testimonialsSection.addEventListener('mouseleave', startCarousel);
+
+    // Intersection Observer for fade-in animations
+    const fadeElements = document.querySelectorAll('.about-section, .services-section');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // Intersection Observer for Contact Form animation
+    const contactFormWrapper = document.getElementById('contactFormWrapper');
+    const contactObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    if (contactFormWrapper) {
+        contactObserver.observe(contactFormWrapper);
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksElem = document.querySelectorAll('.nav-link');
+    
+    function updateActiveLink() {
+        let scrollPos = window.scrollY + 150;
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            if(scrollPos >= top && scrollPos < top + height) {
+                navLinksElem.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('load', updateActiveLink);
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId === "#" || targetId === "") return;
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const nav = document.getElementById('navLinks');
+                if(nav && nav.classList.contains('show')) {
+                    nav.classList.remove('show');
+                }
+                history.pushState(null, null, targetId);
+            }
+        });
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinksContainer = document.getElementById('navLinks');
+    if(menuToggle && navLinksContainer) {
+        menuToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('show');
+        });
+        navLinksContainer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksContainer.classList.remove('show');
+            });
+        });
+    }
+
+    const newContactForm = document.getElementById('newContactForm');
+    const newFeedbackDiv = document.getElementById('newFormFeedback');
+    
+    if(newContactForm) {
+        newContactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('newName').value.trim();
+            const email = document.getElementById('newEmail').value.trim();
+            const message = document.getElementById('newMessage').value.trim();
+            if(!name || !email || !message) {
+                newFeedbackDiv.innerHTML = '<span style="color:#c23b22;">❌ Merci de remplir tous les champs obligatoires.</span>';
+                return;
+            }
+            if(!email.includes('@')) {
+                newFeedbackDiv.innerHTML = '<span style="color:#c23b22;">❌ Adresse email invalide.</span>';
+                return;
+            }
+            newFeedbackDiv.innerHTML = '<span style="color:#2f6b3c;">✨ Merci ! Votre message a été envoyé. Je vous recontacte sous 48h.</span>';
+            newContactForm.reset();
+            setTimeout(() => {
+                newFeedbackDiv.innerHTML = '';
+            }, 5000);
+        });
+    }
+</script>
+</body>
+</html>
