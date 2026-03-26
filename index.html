@@ -36,10 +36,10 @@
     <section id="accueil" class="hero-fullscreen">
         <div class="hero-split">
             <div class="hero-left">
-                <img src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&fit=crop" alt="Photographie artistique">
+                <img src="image/bw.png" alt="Photographie artistique">
             </div>
             <div class="hero-right">
-                <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&fit=crop" alt="Portrait professionnel">
+                <img src="image/geniteur.png" alt="Portrait professionnel">
             </div>
         </div>
         
@@ -65,7 +65,7 @@
         <div class="portfolio-grid" id="portfolioGrid"></div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT SECTION - COMPACT HEIGHT & LARGER PARAGRAPH TEXT -->
     <section id="about" class="about-section">
         <div class="about-left">
             <div class="about-content-wrapper">
@@ -81,14 +81,14 @@
             </div>
         </div>
         <div class="about-right">
-            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop" alt="Nicolas Passy - Photographe 2N IMAGE">
+            <img src="image/nicolas.png" alt="Nicolas Passy - Photographe 2N IMAGE">
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- SERVICES SECTION - COMPACT HEIGHT & LARGER PARAGRAPH TEXT -->
     <section id="services" class="services-section">
         <div class="services-left">
-            <img id="servicesImage" src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop" alt="Service photographie">
+            <img id="servicesImage" src="image/sport2.png" alt="Service photographie">
         </div>
         <div class="services-right">
             <div class="services-content-wrapper">
@@ -142,7 +142,7 @@
         <div class="contact-container">
             <div class="contact-split">
                 <div class="contact-image">
-                    <img src="https://images.pexels.com/photos/1022937/pexels-photo-1022937.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop" alt="Photographie professionnelle">
+                    <img src="image/larve.png" alt="Photographie professionnelle">
                 </div>
                 <div class="contact-form-wrapper" id="contactFormWrapper">
                     <div class="contact-headline">
@@ -206,14 +206,14 @@
 </footer>
 
 <script>
-    // Portfolio images
+    // Portfolio images with category and gallery link
     const portfolioItems = [
-        { url: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Mariage en forêt" },
-        { url: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Portrait urbain" },
-        { url: "https://images.pexels.com/photos/1022937/pexels-photo-1022937.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Douceur & lumière" },
-        { url: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Émotion en noir & blanc" },
-        { url: "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Séance couple" },
-        { url: "https://images.pexels.com/photos/1656686/pexels-photo-1656686.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Fashion editorial" }
+        { url: "image/mariage.png", title: "Mariage Coutumier", category: "mariages", galleryLink: "mariage.html" },
+        { url: "image/surprise.png", title: "Anniversaire", category: "anniversaires", galleryLink: "gallery-anniversaire.html" },
+        { url: "image/chute.png", title: "Chute de Djakana", category: "nature", galleryLink: "gallery-nature.html" },
+        { url: "image/sport.png", title: "Journée sportive mixte", category: "evenements", galleryLink: "gallery-evenement.html" },
+        { url: "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Séance couple", category: "portraits", galleryLink: "gallery-portraits.html" },
+        { url: "https://images.pexels.com/photos/1656686/pexels-photo-1656686.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Fashion editorial", category: "artistique", galleryLink: "gallery-artistique.html" }
     ];
 
     const portfolioGrid = document.getElementById('portfolioGrid');
@@ -227,10 +227,30 @@
             portfolioItem.innerHTML = `
                 <div class="portfolio-image-wrapper">
                     <img src="${item.url}" alt="${item.title}" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="overlay-content">
+                            <button class="gallery-btn" data-gallery-link="${item.galleryLink}" data-title="${item.title}">
+                                <i class="fas fa-images"></i> Voir la galerie
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="portfolio-caption">${item.title}</div>
             `;
             portfolioGrid.appendChild(portfolioItem);
+        });
+        
+        // ADD EVENT LISTENERS TO ALL GALLERY BUTTONS
+        document.querySelectorAll('.gallery-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const link = this.getAttribute('data-gallery-link');
+                const title = this.getAttribute('data-title');
+                if (link) {
+                    // Navigate to the gallery page
+                    window.location.href = link;
+                }
+            });
         });
     }
     
@@ -238,11 +258,11 @@
 
     // Services image mapping
     const serviceImages = {
-        evenements: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop",
-        mariages: "https://images.pexels.com/photos/1022937/pexels-photo-1022937.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop",
-        anniversaires: "https://images.pexels.com/photos/1656686/pexels-photo-1656686.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop",
-        portraits: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop",
-        artistique: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+        evenements: "image/sport2.png",
+        mariages: "image/mariage2.png",
+        anniversaires: "image/cake.png",
+        portraits: "image/water.png",
+        artistique: "image/elegant.png"
     };
 
     const servicesImage = document.getElementById('servicesImage');
