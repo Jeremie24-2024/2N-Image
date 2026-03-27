@@ -15,7 +15,10 @@
 <nav class="navbar">
     <div class="nav-container">
         <div class="logo">
-            <a href="#accueil">2N<span> IMAGE</span></a>
+            <a href="#accueil">
+                <img src="image/logo2n.jpeg" alt="2N IMAGE Logo" class="nav-logo-img">
+                <span class="logo-text">2N<span> IMAGE</span></span>
+            </a>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">
             <i class="fas fa-bars"></i>
@@ -150,20 +153,23 @@
                         <p>Contactez 2N Image dès aujourd'hui et transformons ensemble vos souvenirs en œuvres d'art inoubliables</p>
                     </div>
                     <div class="contact-form-inner">
-                        <form id="newContactForm">
+                        <form id="newContactForm" action="https://formspree.io/f/mbdplelj" method="POST">
                             <div class="form-group-custom">
-                                <input type="text" id="newName" placeholder="Nom complet" required>
+                                <input type="text" id="newName" name="name" placeholder="Nom complet" required>
                             </div>
                             <div class="form-group-custom">
-                                <input type="email" id="newEmail" placeholder="Adresse email" required>
+                                <input type="email" id="newEmail" name="email" placeholder="Adresse email" required>
                             </div>
                             <div class="form-group-custom">
-                                <input type="tel" id="newPhone" placeholder="Téléphone">
+                                <input type="tel" id="newPhone" name="phone" placeholder="Téléphone" required>
                             </div>
                             <div class="form-group-custom">
-                                <textarea rows="4" id="newMessage" placeholder="Votre message..." required></textarea>
+                                <input type="date" id="reservationDate" name="date" placeholder="Date de réservation" required lang="fr">
                             </div>
-                            <button type="submit" class="submit-btn">Envoyer le message</button>
+                            <div class="form-group-custom">
+                                <textarea rows="4" id="newMessage" name="message" placeholder="Votre message (ex: Je souhaite vous réserver pour un mariage le 25 décembre à 14h)" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Envoyer la demande de réservation</button>
                             <div id="newFormFeedback" class="form-message-custom"></div>
                         </form>
                     </div>
@@ -177,30 +183,31 @@
     <div class="footer-container">
         <div class="footer-main">
             <div class="footer-brand">
-                <h2>2N IMAGE</h2>
+                <div class="footer-logo-wrapper">
+                    <img src="image/logo2n.jpeg" alt="2N IMAGE Logo" class="footer-logo-img">
+                </div>
                 <p>Photographie d'auteur<br>créativité & authenticité</p>
             </div>
             <div class="footer-contact">
                 <div class="contact-line">
-                    <span>+241 074595519</span>
+                    <span>+241 065666791</span>
                 </div>
                 <div class="contact-line">
-                    <span>2n@gmail.com</span>
+                    <span>clivenicolas27@gmail.com</span>
                 </div>
                 <div class="contact-line">
-                    <span>Franceville, Gabon</span>
+                    <span> Franceville, Haut-oguoué, Gabon</span>
                 </div>
             </div>
             <div class="footer-social">
                 <div class="social-icons">
-                    <a href="#" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/monsieur2i?mibextid=ZbWKwL" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://api.whatsapp.com/message/ECDBRCQOFPHHM1?autoload=1&app_absent=0" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2025 2N IMAGE — Tous droits réservés.</span>
+            <span>© 2026 2N IMAGE — Tous droits réservés.</span>
         </div>
     </div>
 </footer>
@@ -212,8 +219,8 @@
         { url: "image/surprise.png", title: "Anniversaire", category: "anniversaires", galleryLink: "gallery-anniversaire.html" },
         { url: "image/chute.png", title: "Chute de Djakana", category: "nature", galleryLink: "gallery-nature.html" },
         { url: "image/sport.png", title: "Journée sportive mixte", category: "evenements", galleryLink: "gallery-evenement.html" },
-        { url: "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Séance couple", category: "portraits", galleryLink: "gallery-portraits.html" },
-        { url: "https://images.pexels.com/photos/1656686/pexels-photo-1656686.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop", title: "Fashion editorial", category: "artistique", galleryLink: "gallery-artistique.html" }
+        { url: "image/larve8.png", title: "Insecte", category: "Insectes", galleryLink: "gallery-insecte.html" },
+        { url: "image/a9.png", title: "Portrait", category: "Portrait", galleryLink: "gallery-portrait.html" }
     ];
 
     const portfolioGrid = document.getElementById('portfolioGrid');
@@ -240,14 +247,11 @@
             portfolioGrid.appendChild(portfolioItem);
         });
         
-        // ADD EVENT LISTENERS TO ALL GALLERY BUTTONS
         document.querySelectorAll('.gallery-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 const link = this.getAttribute('data-gallery-link');
-                const title = this.getAttribute('data-title');
                 if (link) {
-                    // Navigate to the gallery page
                     window.location.href = link;
                 }
             });
@@ -314,7 +318,7 @@
 
     function startCarousel() {
         if (intervalId) clearInterval(intervalId);
-        intervalId = setInterval(nextTestimonial, 5000);
+        intervalId = setInterval(nextTestimonial, 4000);
     }
 
     startCarousel();
@@ -410,25 +414,68 @@
     const newContactForm = document.getElementById('newContactForm');
     const newFeedbackDiv = document.getElementById('newFormFeedback');
     
+    // Set minimum date to today
+    const dateInput = document.getElementById('reservationDate');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    }
+    
+    // Handle form submission with Formspree
     if(newContactForm) {
-        newContactForm.addEventListener('submit', function(e) {
+        newContactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            
             const name = document.getElementById('newName').value.trim();
             const email = document.getElementById('newEmail').value.trim();
+            const phone = document.getElementById('newPhone').value.trim();
+            const reservationDate = document.getElementById('reservationDate').value;
             const message = document.getElementById('newMessage').value.trim();
-            if(!name || !email || !message) {
+            
+            if(!name || !email || !phone || !reservationDate || !message) {
                 newFeedbackDiv.innerHTML = '<span style="color:#c23b22;">❌ Merci de remplir tous les champs obligatoires.</span>';
                 return;
             }
+            
             if(!email.includes('@')) {
                 newFeedbackDiv.innerHTML = '<span style="color:#c23b22;">❌ Adresse email invalide.</span>';
                 return;
             }
-            newFeedbackDiv.innerHTML = '<span style="color:#2f6b3c;">✨ Merci ! Votre message a été envoyé. Je vous recontacte sous 48h.</span>';
-            newContactForm.reset();
-            setTimeout(() => {
-                newFeedbackDiv.innerHTML = '';
-            }, 5000);
+            
+            // Check if date is in the past
+            const selectedDate = new Date(reservationDate);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            if (selectedDate < today) {
+                newFeedbackDiv.innerHTML = '<span style="color:#c23b22;">❌ La date de réservation ne peut pas être dans le passé. Veuillez choisir une date future.</span>';
+                return;
+            }
+            
+            // Prepare form data for Formspree
+            const formData = new FormData(newContactForm);
+            
+            try {
+                const response = await fetch('https://formspree.io/f/mbdplelj', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    newFeedbackDiv.innerHTML = '<span style="color:#2f6b3c;">✨ Merci ! Votre demande de réservation a été envoyée. Je vous recontacte sous 48h pour confirmer.</span>';
+                    newContactForm.reset();
+                    setTimeout(() => {
+                        newFeedbackDiv.innerHTML = '';
+                    }, 5000);
+                } else {
+                    newFeedbackDiv.innerHTML = '<span style="color:#c23b22;">❌ Une erreur est survenue. Veuillez réessayer ou me contacter directement.</span>';
+                }
+            } catch (error) {
+                newFeedbackDiv.innerHTML = '<span style="color:#c23b22;">❌ Une erreur est survenue. Veuillez réessayer ou me contacter directement.</span>';
+            }
         });
     }
 </script>

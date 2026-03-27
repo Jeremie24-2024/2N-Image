@@ -41,19 +41,33 @@ body {
 }
 
 .logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
     font-size: 2rem;
     font-weight: 800;
     letter-spacing: -0.02em;
-    text-decoration: none;
-    background: linear-gradient(135deg, #1f1f1f, #5a4a3a);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
     transition: all 0.2s;
     font-family: 'Playfair Display', serif;
 }
 
-.logo span {
+.nav-logo-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text {
+    background: linear-gradient(135deg, #1f1f1f, #5a4a3a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo-text span {
     background: none;
     color: #1e1e1e;
     font-weight: 400;
@@ -769,6 +783,32 @@ body {
     font-weight: 300;
 }
 
+/* Date input styling with French locale */
+.form-group-custom input[type="date"] {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: none;
+    border-bottom: 1px solid #e0d3c2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background: transparent;
+    transition: 0.2s;
+    border-radius: 0px;
+    outline: none;
+    cursor: pointer;
+    color: #4a3a2a;
+}
+
+.form-group-custom input[type="date"]:focus {
+    border-bottom-color: #C4A27A;
+    background: #fefaf5;
+}
+
+.form-group-custom input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.5);
+}
+
 .submit-btn {
     background-color: #C4A27A;
     color: white;
@@ -821,18 +861,21 @@ footer {
 .footer-brand {
     flex: 1;
     min-width: 220px;
+    text-align: center;
 }
 
-.footer-brand h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #ffffff, #e0cfbc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+.footer-logo-wrapper {
+    display: flex;
+    justify-content: center;
     margin-bottom: 0.8rem;
-    font-family: 'Playfair Display', serif;
+}
+
+.footer-logo-img {
+    width: 150px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .footer-brand p {
@@ -892,7 +935,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: white;
+    color: #C4A27A;
 }
 
 .footer-bottom {
@@ -917,6 +960,9 @@ footer {
     }
     .footer-brand {
         text-align: center;
+    }
+    .footer-logo-wrapper {
+        justify-content: center;
     }
     .footer-contact {
         align-items: center;
@@ -1019,6 +1065,14 @@ footer {
     }
     .menu-toggle {
         display: block;
+    }
+    
+    .logo a {
+        font-size: 1.5rem;
+    }
+    .nav-logo-img {
+        width: 40px;
+        height: 40px;
     }
 }
 
